@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agenda Escolar</title>
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="fondo"></div>
+<header>
+<h1>📚 Agenda Escolar</h1>
+<p>Organiza todas tus tareas y materias</p>
+</header>
+<section class="panel">
+<h2>Agregar nueva tarea</h2>
+<div class="formulario">
+<input
+id="titulo"
+type="text"
+placeholder="Nombre de la tarea">
+<select id="materia">
+<option value="">Materia</option>
+<option>Desarrollo aplicaciones móviles para Android</option>
+<option>Desarrollo aplicaciones móviles para IOS</option>
+<option>Humanismo y pensamiento filosófico en México</option>
+<option>Humanidades III</option>
+<option>Organismos: estructuras y procesos. Herencia y evolución biológica</option>
+<option>Temas selectos de matemáticas III</option>
+<option>Conciencia histórica III</option>
+<option>Orientación educativa</option>
+</select>
+<textarea
+id="descripcion"
+placeholder="Descripción de la tarea"></textarea>
+<div class="fechaHora">
+<div>
+<label>Fecha de entrega</label>
+<input id="fecha" type="date">
+</div>
+<div>
+<label>Hora de entrega</label>
+<input id="hora" type="time">
+</div>
+</div>
+<button id="guardar">
+Guardar tarea
+</button>
+</div>
+</section>
+<section class="estadisticas">
+<div class="card">
+<h3>Pendientes</h3>
+<span id="pendientes">0</span>
+</div>
+<div class="card">
+<h3>Completadas</h3>
+<span id="completadas">0</span>
+</div>
+<div class="card">
+<h3>Vencidas</h3>
+<span id="vencidas">0</span>
+</div>
+</section>
+<section class="lista">
+<h2>Tareas</h2>
+<div id="listaTareas"></div>
+</section>
+<section class="horario">
+<h2>Horario Escolar</h2>
+<div class="tablaResponsive">
+<table>
+<thead>
+<tr>
+<th>Hora</th>
+<th>Lunes</th>
+<th>Martes</th>
+<th>Miércoles</th>
+<th>Jueves</th>
+<th>Viernes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>13:10 - 14:00</td>
+
+<td>Humanismo y pensamiento filosófico en México</td>
+
+<td>Desarrollo aplicaciones móviles Android</td>
+
+<td>Humanidades III</td>
+
+<td>Organismos: estructuras y procesos</td>
+
+<td>Humanidades III</td>
+
+</tr>
+
+<tr>
+
+<td>14:00 - 14:50</td>
+
+<td>Humanismo y pensamiento filosófico en México</td>
+
+<td>Desarrollo aplicaciones móviles Android</td>
+
+<td>Humanidades III</td>
+
+<td>Organismos: estructuras y procesos</td>
+
+<td>Humanidades III</td>
+
+</tr>
+
+<tr>
+
+<td>14:50 - 15:40</td>
+
+<td>Desarrollo aplicaciones móviles Android</td>
+
+<td>Humanismo y pensamiento filosófico en México</td>
+
+<td>Desarrollo aplicaciones móviles Android</td>
+
+<td>Humanidades III</td>
+
+<td>Temas selectos de matemáticas III</td>
+
+</tr>
+
+<tr>
+
+<td>15:40 - 16:30</td>
+
+<td>Desarrollo aplicaciones móviles Android</td>
+
+<td>Desarrollo aplicaciones móviles IOS</td>
+
+<td>Organismos: estructuras y procesos</td>
+
+<td>Desarrollo aplicaciones móviles IOS</td>
+
+<td>Temas selectos de matemáticas III</td>
+
+</tr>
+
+<tr class="receso">
+
+<td colspan="6">
+
+RECESO
+
+16:30 - 16:50
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>16:50 - 17:40</td>
+
+<td>Desarrollo aplicaciones móviles IOS</td>
+
+<td>Temas selectos de matemáticas III</td>
+
+<td>Organismos: estructuras y procesos</td>
+
+<td>Desarrollo aplicaciones móviles IOS</td>
+
+<td>Conciencia histórica III</td>
+
+</tr>
+
+<tr>
+
+<td>17:40 - 18:30</td>
+
+<td>Desarrollo aplicaciones móviles IOS</td>
+
+<td>Temas selectos de matemáticas III</td>
+
+<td>Conciencia histórica III</td>
+
+<td>Temas selectos de matemáticas III</td>
+
+<td>Desarrollo aplicaciones móviles Android</td>
+
+</tr>
+
+<tr>
+
+<td>18:30 - 19:20</td>
+
+<td></td>
+
+<td></td>
+
+<td>Conciencia histórica III</td>
+
+<td>Orientación educativa</td>
+
+<td>Desarrollo aplicaciones móviles IOS</td>
+
+</tr>
+
+<tr>
+
+<td>19:20 - 20:10</td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+<td></td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+
+
+<section class="recordatorios">
+
+<h2>Recordatorios</h2>
+
+<div id="recordatorios"></div>
+
+</section>
+
+<script src="agenda.js"></script>
+
+<div class="camera-container">
+    <video id="camera" autoplay playsinline></video>
+    <canvas id="canvas" style="display:none;"></canvas>
+</div>
+
+<button class="btn-tap" onclick="Camera.startCamera()">📷 Abrir Cámara</button>
+<button class="btn-tap" onclick="Camera.takePhoto()">📸 Tomar Foto</button>
+<button class="btn-tap" onclick="Camera.stopCamera()">❌ Cerrar</button>
+
+<img id="photo" style="width:100%; border-radius:12px; margin-top:10px;">
+
+
+<footer>
+
+Agenda Escolar 2026
+
+</footer>
+</body>
+
+</html>
